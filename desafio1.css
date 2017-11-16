@@ -1,8 +1,13 @@
 
-    	/*fuente :#361B10*/
+
 /*...................BODY.........................		*/
+/*fuente 
+    	header : #539092
+    	section: #AEE8E6 
+    	footer:#8BCFCC 
+    	opcional:#F5FAC8*/
 		body{
-			background: #8DB41F;
+			background: #AEE8E6/* #8BCFCC*/;
 			display: grid;
 			margin: 0px;
 			grid-template-rows: 100px auto 70px;
@@ -13,6 +18,7 @@
 			min-height: 100vh;
 			color: #361B10;
 			
+			
 		}
 
 
@@ -22,12 +28,13 @@
 
 		 header{
 			grid-area: header;
-			background: #2DAAE1 ;
+			background: #539092 ;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+				border:  5px solid #F5FAC8;
 		}
-		
+
 		h1{
 			font-size: 70px;
 			font-weight: bold;
@@ -39,8 +46,8 @@
 			50%{transform: translateX(5px);}
 			100%{transform: translateY(0px); }	
 		}
-		body:hover h1{
-			animation: .5s titulo infinite;
+		h1{
+			animation: .9s titulo infinite;
 			opacity: 1;
 		}
 		
@@ -56,6 +63,8 @@
     		width: 100%;
     		justify-content: center;
     		align-items: center;
+    	
+
 		}
 		.images{
 			width: 95%;
@@ -92,8 +101,8 @@
 			50%{transform: translateY(5px) ;}
 			100%{transform: translateX(0px) ;}
 		} 
-		body:hover .images{
-			animation: .5s cats infinite;
+		.images{
+			animation: .7s cats infinite;
 		}	
 
 		.menu{
@@ -144,15 +153,18 @@
 		}
 		.images-mama{
 			opacity: 0;	
-
+			animation: mama 1s 5s ease-in forwards;
+			
 		}
-		body:hover .images-mama{
-			opacity: 1;
+		@keyframes mama{
+			to{opacity: 1;
 			
-			transition: .9s;
-			transition-delay: .9s;
+		
 			
-			 transform: rotate(-90deg) scale(1.5);	
+			 transform: rotate(-90deg) ;	}
+		}
+		.images-mama{
+			
 		}
 
 
@@ -160,6 +172,7 @@
 /*------------------------footer-----------------------------------------*/
 		body footer{
 			grid-area: footer;
-			background: #EA5507;
+			background:#8BCFCC /*#AEE8E6 */ ;
+			border: 5px #F5FAC8 solid;
 		}
 	
