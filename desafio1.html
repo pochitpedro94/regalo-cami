@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Desafio 1</title>
+	<link rel="stylesheet" href="desafio1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<body>
+	<header>
+		<h1>the house Stark</h1>
+	</header>
+
+	<section>
+		<div class="images">
+				<img src="images/gato.png" class =" contenedor-imagen imagen-a"	 width="100px" alt="">
+				<img src="images/gato.png" class =" contenedor-imagen imagen-b"	 width="100px" alt="">
+				<img src="images/gato.png"  class =" contenedor-imagen imagen-c"	width="100px" alt="">
+				<img src="images/gato.png"  class =" contenedor-imagen imagen-d"	width="100px" alt="">
+			</div>
+		<div class="menu">
+			<h3 id="menu-min" class="js-fade fade-in is-paused" >Felicidades mama te has ganado un premio</h3>
+		</div>
+		<div class="alpha"><div><img src="images/CSC_0264.JPG" width="200px" alt="" class="images-mama"></div></div>
+	</section>
+	<footer>
+	<script>
+		var el = document.querySelector('.js-fade');
+		if (el.classList.contains('is-paused')){
+      el.classList.remove('is-paused');
+    }
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+	// 	var transparency = 0;
+// 	  var obj = document.getElementById('menu-min');
+// 	 var time = obj.classList.toggle("active")
+// 	function fadeIn() {
+//   //
+//   //incrementamos el valor
+//   transparency += 9; 
+//   //si termino la trnsicion borramos el intervalo
+//   transparency = (transparency == 100) ? clearInterval(time) : transparency;
+//   //seteamos al div como objeto para poder usarlo
+
+//   //programamos cada navegador por separado
+//   if (document.all){ 
+//     //esto es para IE, como siempre hay q programarlo a parte
+//     obj.style.filter = 'alpha(opacity='+transparency+')';
+//   }else{
+//     // Safari 1.2, posterior Firefox y Mozilla, CSS3
+//     obj.style.opacity = transparency /100;
+    
+//     // anteriores Mozilla y Firefox
+//     obj.style.MozOpacity = transparency /100;
+    
+//     // Safari anterior a 1.2, Konqueror
+//     obj.style.KHTMLOpacity = transparency /100;  
+//   } 
+// };
+// window.onload = function() {
+//   //
+//   time = setInterval('fadeIn()',100);
+// };
+	
+
+		
+	</script>
+</body>
+</html>
