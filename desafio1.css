@@ -112,6 +112,7 @@
 			/*background: blue;
 			border: 1px black solid;*/
 			/*overflow: hidden;*/
+			z-index: 1;
 		}
 		body:hover .menu{
 			opacity: 0;
@@ -143,6 +144,9 @@
 		.is-paused{
 			animation-play-state: paused;
 		}
+		.imgproject img{
+			border: solid #F5FAC8 5px;
+		}
 		.alpha{
 		
 			z-index: 2;
@@ -154,7 +158,6 @@
 		.images-mama{
 			opacity: 0;	
 			animation: mama 1s 5s ease-in forwards;
-			
 		}
 		@keyframes mama{
 			to{opacity: 1;
@@ -167,7 +170,32 @@
 			
 		}
 
+		.img1200{
+			/*opacity: 0;*/
+			transform: rotate(-90deg);
+			border: solid #F5FAC8 5px;
+			margin-top: -122px;
+			opacity: 0;
+			position: absolute;
+			
+			
+		}
+		.titulo-1025{
+			display: none;
+		}
+		.gaticos-1025{
+			opacity: 0;
+			display: none
+		}
+		.gaticosd-1025-animated{
+			position: absolute;
+		}
 
+		.images-mama, .gaticos-1025-display img{
+			border: solid #F5FAC8 7px;
+			border-radius: 5px; 
+
+		}
 
 /*------------------------footer-----------------------------------------*/
 		body footer{
@@ -175,4 +203,155 @@
 			background:#8BCFCC /*#AEE8E6 */ ;
 			border: 5px #F5FAC8 solid;
 		}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------media queries .........................*/
+@media screen and (max-width: 1270px){
+	body{color:#F5FAC8;}
+	.alpha {
+		transform: translateX(-210px);
+		display:flex-none;
+		transition: .5s;
+	}
+	.menu{
+		display: none;
+	}
+	.img1200{
+		opacity: 1;
+		transition: .9s;
+	}
+}
+
+@media screen and (max-width: 1125px)
+{
+
+
+	header{
+		background: #8BCFCC;
+	}
+	 body footer{
+		background: #539092;
+	}
+}
+
+@media screen and (max-width: 1025px)
+{
+	body{
+		background: #F5C7F7;
+		grid-template-rows: auto auto auto;
+		transition: .9s;
+	}
+	header{
+		background: #27296D;
+	}
 	
+	h1{
+		color: #F5C7F7;
+		font-size: 50px;
+		text-align: center;
+	}
+	
+	@keyframes titulo{
+			0%{transform: translateX(0px);}
+			50%{transform: translateY(5px);}
+			100%{transform: translateX(0px); }	
+		}
+	
+	.titulo-principal{
+	display: none;
+	}
+	.titulo-1025{
+			display: block;
+		}
+	
+	.images{
+		display: none;
+	}
+	.alpha, .img1200{
+		opacity: 0;
+	}
+	.gaticos-1025{
+	display: block;
+	opacity: 1;
+	}
+	.gaticos-1025{
+		opacity: 1;
+		transition: .9s;
+		padding: 100px;
+	}
+	.gaticos-1025-display{
+		display: flex;
+		flex-flow: column wrap-reverse ;
+		align-items: center;
+	}
+	.gaticos-1025-display img{
+		margin-top: 25px;
+	}
+	.head-red, .body-red{
+		float: left;
+		position: absolute;
+	    margin-top: -1303px;
+   		margin-left: -254px;
+	}
+	.head-yellow, .body-yellow{
+		float: right;
+		position: absolute;
+		margin-left: 377px;
+    	margin-top: -132px;
+    	    transform: rotate(45deg);
+		}
+	.head-red, .head-yellow{
+		z-index: 2;
+		}
+	.head-red{
+		animation: head-first .7s ease-in infinite;
+	}
+	.head-yellow{
+		animation: head-second .7s ease-in infinite;
+	    margin-top: -165px;
+    	margin-left: 389px;
+	}
+
+	@keyframes head-first {
+			0%{transform: translateX(0px);}
+			50%{transform: translateY(5px) rotate(2deg) ;}
+			100%{transform: translateX(0px) ;}
+		}
+	@keyframes head-second {
+			0%{transform: translateY(0px);}
+			50%{transform: translateX(5px) rotate(2deg) ;}
+			100%{transform: translateY(0px) ;}
+		}
+
+	body footer{
+		background: #5E63B6;
+	}
+	body footer, header{
+		border: 4px solid #A393EB;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
