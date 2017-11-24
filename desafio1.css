@@ -166,10 +166,7 @@
 			
 			 transform: rotate(-90deg) ;	}
 		}
-		.images-mama{
-			
-		}
-
+		
 		.img1200{
 			/*opacity: 0;*/
 			transform: rotate(-90deg);
@@ -183,7 +180,7 @@
 		.titulo-1025, .titulo-750{
 			display: none;
 		}
-		.gaticos-1025{
+		.gaticos-1025, .titulo-550{
 			opacity: 0;
 			display: none
 		}
@@ -197,6 +194,9 @@
 
 		}
 		.cats-750{
+			display: none;
+		}
+		.gaticos-550{
 			display: none;
 		}
 
@@ -550,9 +550,53 @@ animation: ball 1.8s ease-in infinite;
 
 }
 
+@media screen and (max-width: 550px){
+		/*#E3D9CA blanco, #95A792 azul claro, #596C68 azul marino, #403F48 azul oscuro*/
+	header{
+		background: #596C68 ;
+	}
+	body footer{
+		background: #403F48;
+	}
+	body{
+		background: #E3D9CA;
+	}
+	body footer, header{
+		border: 4px solid #95A792 ;
+	}
+	
+	.titulo-750{
+		display: none;
+	}
+	.titulo-550{
+		display: block;
+		opacity: 1;
+		font-size: 40px;
+		color: #E3D9CA; 
+	}
+	.gaticos-550{
+		display: block;
+		margin: 100px 0  -156px 0;
+		display: flex;
+		flex-flow: column wrap-reverse ;
+		align-items: center;
+		justify-content: center;
+		transition: .7s;		
+	}
+	.gaticos-550 img {
+		margin-top: 30px;
+		border: solid #95A792 7px;
+		border-radius: 5px; 
 
-
-
+	}
+	.gaticos-750{
+		display: none;
+	}
+	.bottom-cats{
+		margin: 924px auto 0;
+	}
+}
+	
 
 
 
