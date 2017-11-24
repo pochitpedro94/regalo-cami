@@ -180,7 +180,7 @@
 			
 			
 		}
-		.titulo-1025{
+		.titulo-1025, .titulo-750{
 			display: none;
 		}
 		.gaticos-1025{
@@ -191,10 +191,13 @@
 			position: absolute;
 		}
 
-		.images-mama, .gaticos-1025-display img{
+		.images-mama, .gaticos-1025-display img, .gaticos-750 img{
 			border: solid #F5FAC8 7px;
 			border-radius: 5px; 
 
+		}
+		.cats-750{
+			display: none;
 		}
 
 /*------------------------footer-----------------------------------------*/
@@ -203,6 +206,7 @@
 			background:#8BCFCC /*#AEE8E6 */ ;
 			border: 5px #F5FAC8 solid;
 		}
+				
 		
 
 
@@ -294,9 +298,13 @@
 		display: flex;
 		flex-flow: column wrap-reverse ;
 		align-items: center;
+		justify-content: center;
 	}
-	.gaticos-1025-display img{
+	.gaticos-1025-display img, .gaticos-750 img{
 		margin-top: 25px;
+	}
+	.gaticos-1025-animated{
+		position: absolute;
 	}
 	.head-red, .body-red{
 		float: left;
@@ -336,14 +344,211 @@
 
 	body footer{
 		background: #5E63B6;
+		transition-delay: .5s;
 	}
 	body footer, header{
 		border: 4px solid #A393EB;
 	}
 	
+	.cat-red, .cat-yellow, .gaticos-1025-display{
+		transition: .9s;
+	}
+/*------------------------------------future media 750--------------------------------*/
+	.gaticos-750{
+		display: none;
+	}
+	.cat-brown, .cat-black{
+		opacity: 0;
+		transition: .2s;
+	}
+	
+	.leg-cat-brown, .body-cat-brown, .ball-cat-brown, .body-cat-black, .tail-cat-black{ 
+		position: absolute;
+	}
+
+
+	
+	
+	
+
+
+@media screen and (max-width: 850px){
+	
+	
+	.cat-red, .cat-yellow, .gaticos-1025-display{
+		transition: .9s;
+	}
+
+	.cat-red{
+		transform: translateX(300px);
+	}
+	footer{
+		transform: translateY(345px);
+		position: sticky;
+		vertical-align: bottom;
+
+	}
+	.cat-yellow{
+		transform:translateY(335px) translateX(-300px) ;
+
+	}
+	.gaticos-1025-display{
+		transform: translateY(150px) ;
+	}
+	
+	
 }
+@media screen and (max-width: 750px)
+{ 	.cats-750{
+	display: block;
+	width: 80%;
+	height: 100%;	
+	position: absolute;
+}
+	.titulo-1025{
+	display: none
+}
+	.titulo-750{
+		display: block;
+		
+
+	}
 
 
+.top-cat{
+    display: flex;
+    justify-content: center;
+    height: 213px;
+}
+    
+	.cat-brown{
+	height: 206px;
+    width: 179px;
+    display: flex;
+   	margin: 25px 0 0 -15px;
+    justify-content: center;
+	
+	}
+	.ball-cat-brown{
+animation: ball 1.8s ease-in infinite;
+	}
+	
+	.leg-cat-brown{
+		animation: leg 1.8s ease-in infinite;
+	}
+	@keyframes ball{
+		0%{
+			transform: translateX(8px) rotate(2deg) ;
+		}
+		50%{
+			transform: translateX(0px) rotate(0deg);
+		}
+		100%{
+			transform: translateX(8px) rotate(2deg);
+		}
+	}
+	@keyframes leg{
+		0%{
+			transform: translateX(8px);
+		}
+		50%{
+			transform: translateX(0px);
+		}
+		100%{
+			transform: translateX(8px);
+		}
+	}	
+	
+	.cat-black{
+		display: flex;
+		justify-content: center;
+		width: 179px;
+	}
+	.tail-cat-black{
+		animation: tail 1.9s ease-in infinite;
+	}
+	.body-cat-black{
+
+	}
+	@keyframes tail{
+		0%{
+			transform: rotate(10deg);		
+		}
+		50%{
+			transform: rotate(0deg);
+		}
+		100%{
+			transform: rotate(10deg);
+		}
+	}
+
+	.bottom-cats{
+		margin: 958px auto 0;
+		width: 344px;	
+	}
+	.cat-blue{
+		position: relative;
+		display: inline-block;
+		animation: cat-azul 1.9s ease-in infinite;
+	}
+	.cat-orange{
+		animation: cat-naranja 1.9s  ease-in infinite;
+		height: 113px;
+		display: inline-block;
+	}
+	@keyframes cat-azul{
+		0%{
+			transform: translateX(0);
+		}
+		50%{
+			transform: translateX(139px);
+		}
+		100%{
+			transform: translateX(0);
+		}
+	}
+	@keyframes cat-naranja{
+		0%{
+			transform: translateX(139px);
+		}
+		50%{
+			transform: translateX(0);
+		}
+		100%{
+			transform: translateX(139px);
+		}
+	}
+
+	.cat-red, .cat-yellow{
+	display: none;
+	}
+	.gaticos-1025-display{
+		display: none;
+		transition: .9s;
+		transition-delay: .9s;
+	}
+	.gaticos-750{
+		display: block;
+		margin: 100px 0  -148px 0;
+		display: flex;
+		flex-flow: column wrap-reverse ;
+		align-items: center;
+		justify-content: center;		
+	}
+	.gaticos-750 img{
+		width: 300px;
+		height: auto;
+	}
+	.cat-red {
+    transform: translateX(287px) translateY(300px);}
+	
+		.cat-brown, .cat-black{
+		opacity: 1;
+		transition: .9s;
+		transition-delay: .5s;
+	}
+
+}
 
 
 
