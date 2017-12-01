@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -14,53 +13,61 @@
 		<h1 class="titulo-750"> Nos enseñastes a portarnos bien! </h1>
 		<h1 class="titulo-550">Gracias por ser la mejor mama!</h1>
 
-	</header>	<section>
-		<div class="images">
+	</header>	
+	<section>
+		<div class="images-animated-principal">
 				<img src="images/gato.png" class =" contenedor-imagen imagen-a"	 width="100px" alt="">
 				<img src="images/gato.png" class =" contenedor-imagen imagen-b"	 width="100px" alt="">
 				<img src="images/gato.png"  class =" contenedor-imagen imagen-c"	width="100px" alt="">
 				<img src="images/gato.png"  class =" contenedor-imagen imagen-d"	width="100px" alt="">
 			</div>
-		<div class="menu">
+		<div class="menu-intro">
 			<h3 id="menu-min" class="js-fade fade-in is-paused" >Felicidades mama te has ganado un premio</h3>
 		</div>
-		<div class="alpha"><div><img src="images/CSC_0264.JPG" width="350px" alt="" class="images-mama"></div></div>
-		<div> <img src="images/DSC_0095.JPG " width="350px" alt="" class="img1200"></div>
+		<div class="images-principal">
+			<div>
+				<img src="images/CSC_0264.JPG" width="350px" alt="" class="images-principal-mama">
+			</div>
+		</div>
+		<div> 
+			<img src="images/DSC_0095.JPG " width="350px" alt="" class="img1200">
+		</div>
 		
-		<div class="gaticos-1025">
-			<div class= "gaticos-1025-display">
-				<img src="images/img-1025-a.JPG"  alt="" width="400px" height="267px">
-				<img src="images/img-125-b.JPG"  alt="" width="400px" height="267px">
-				<img src="images/img-125-c.JPG"  alt="" width="400px" height="267px">
-				<img src="images/img-125d.JPG"  alt="" width="400px" height="267px">
+		
+		<div class="cats-images-querie  ">
+			<div class= "gaticos-1025-images lazy b-loaded">
+				<img data-src="images/img-1025-a.JPG"   alt="" width="400px" height="267px">
+				<img data-src="images/img-125-b.JPG"   alt="" width="400px" height="267px">
+				<img data-src="images/img-125-c.JPG"   alt="" width="400px" height="267px">
+				<img data-src="images/img-125d.JPG"   alt="" width="400px" height="267px">
 			</div>
-			<div class="gaticos-750">
+			<div class="gaticos-750-images lazy b-loaded ">
 				
-				<img src="images/DSC_0009.jpg"  alt="" width="400px" height="267px">
-				<img src="images/DSC_0011.jpg"  alt="" width="400px" height="267px">
-				<img src="images/DSC_0015.jpg"  alt="" width="400px" height="267px">
-				<img src="images/CSC_0271.JPG"  alt="" width="400px" height="267px">
+				<img data-src="images/DSC_0009.jpg"   alt="" width="400px" height="267px">
+				<img data-src="images/DSC_0011.jpg"   alt="" width="400px" height="267px">
+				<img data-src="images/DSC_0015.jpg"   alt="" width="400px" height="267px">
+				<img data-src="images/CSC_0271.JPG"   alt="" width="400px" height="267px">
 			</div>
-			<div class="gaticos-550">
-				<img src="images/DSC_0044.JPG" width="280px" height="187px" alt="">
-				<img src="images/CSC_0068.JPG" width="280px" height="187px" alt="">
-				<img src="images/SANSA.jpg" width="280px" height="187px" alt="">
-				<img src="images/cami-blanco-negro.jpg" width="280px" height="187px" alt="">
+			<div class="gaticos-550-images lazy b-loaded ">
+				<img data-src="images/DSC_0044.JPG"  width="280px" height="187px" alt="">
+				<img data-src="images/CSC_0068.JPG"  width="280px" height="187px" alt="">
+				<img data-src="images/SANSA.jpg"  width="280px" height="187px" alt="">
+				<img data-src="images/cami-blanco-negro.jpg"  width="280px" height="187px" alt="">
 			</div>
 			
-			<div class="gaticos-1025-animated">
-				<div class="cat-red">
+			<div class="cats-1025-animated ">
+				<div class="cat-red b-loaded">
 					<img src="images/head-cat-red.png" class="head-red" alt="" width="300px">
 					<img src="images/body-cat-red.png" class="body-red" width="300px" alt="">
 				</div>
-				<div class="cat-yellow">
+				<div class="cat-yellow b-loaded">
 				<img src="images/head-cat-yellow.png" class="head-yellow" alt="" width="300px">
 				<img src="images/body-cat-yellow.png" class="body-yellow" alt="" width="300px">
 				</div>
 			</div>
 
 		</div>
-		<div class="cats-750">
+		<div class="cats-750-animated">
 			<div class="top-cat">
 					<div class="cat-brown">
 						<img src="images/ball-cat-brown.png" width="250px" class="ball-cat-brown" alt="">
@@ -89,13 +96,19 @@
 		<h1 class="titulo-750"> y jugastes mucho con nosotros! </h1>
 		<h1 class="titulo-550">Hasta pronto!</h1>
 	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"> </script>
 	<script>
 		var el = document.querySelector('.js-fade');
 		if (el.classList.contains('is-paused')){
       el.classList.remove('is-paused');
     }
 
-  
+    var  blazy = new Blazy(
+    	{
+    		selector : 'img'
+    	})
+    	
+  console.log(Blazy)
 
 
 

@@ -39,6 +39,8 @@
 			font-size: 70px;
 			font-weight: bold;
 			transition: 1s;
+			animation: .9s titulo infinite;
+			opacity: 1;
 		}
 
 		@keyframes titulo{
@@ -46,11 +48,11 @@
 			50%{transform: translateX(5px);}
 			100%{transform: translateY(0px); }	
 		}
-		h1{
-			animation: .9s titulo infinite;
-			opacity: 1;
-		}
 		
+		.titulo-principal{
+			display: block;
+			transition: .9s;
+		}
 
 /*...................SECTION.........................		*/
 		
@@ -66,17 +68,25 @@
     	
 
 		}
-		.images{
+		.images-animated-principal{
 			width: 95%;
     		height: 90%;
     		z-index: 2;
     		position: absolute; 
+    		animation: .7s cats infinite;
 			/*border: 1px red solid;*/
     		/*display: grid;
     		grid-template-rows: auto auto;
 			grid-template-columns: auto auto;
 			grid-template-areas: "cat-a cat-b "  "cat-c cat-d";*/
 		}
+		@keyframes cats {
+			0%{transform: translateX(0px);}
+			50%{transform: translateY(5px) ;}
+			100%{transform: translateX(0px) ;}
+		} 
+		
+
 		.imagen-a{
 			float: left;
 		}
@@ -96,16 +106,8 @@
     		margin-right: -101px;*/
 			/*border: 1px red solid;*/
 		}
-		@keyframes cats {
-			0%{transform: translateX(0px);}
-			50%{transform: translateY(5px) ;}
-			100%{transform: translateX(0px) ;}
-		} 
-		.images{
-			animation: .7s cats infinite;
-		}	
-
-		.menu{
+		
+		.menu-intro{
 			position: inherit;
 			width: 400px;
 			height: 100px;
@@ -114,17 +116,8 @@
 			/*overflow: hidden;*/
 			z-index: 1;
 		}
-		body:hover .menu{
-			opacity: 0;
-			transition: .9s;
-		}
 		
-		@keyframes fadeIn{
-			to{
-				opacity: 1;
-				transform:translateX(0px);
-			}
-		}
+	
 		.fade-in{
 			/*overflow: hidden;*/
 			transform:translateX(-200px);
@@ -141,13 +134,18 @@
     		/*	left:calc(100vw / 4 );*/
 			}
 
+		@keyframes fadeIn{
+			to{
+				opacity: 1;
+				transform:translateX(0px);
+			}
+		}
+
 		.is-paused{
 			animation-play-state: paused;
 		}
-		.imgproject img{
-			border: solid #F5FAC8 5px;
-		}
-		.alpha{
+		
+		.images-principal{
 		
 			z-index: 2;
 			position:absolute;
@@ -155,17 +153,13 @@
 			justify-content: center;
 			align-items: center;
 		}
-		.images-mama{
+		.images-principal-mama{
 			opacity: 0;	
 			animation: mama 1s 5s ease-in forwards;
 		}
 		@keyframes mama{
 			to{opacity: 1;
-			
-		
-			
-			 transform: rotate(-90deg) ;	}
-		}
+			transform: rotate(-90deg) ;	}}
 		
 		.img1200{
 			/*opacity: 0;*/
@@ -177,28 +171,55 @@
 			
 			
 		}
-		.titulo-1025, .titulo-750{
-			display: none;
-		}
-		.gaticos-1025, .titulo-550{
-			opacity: 0;
-			display: none
-		}
-		.gaticosd-1025-animated{
-			position: absolute;
-		}
-
-		.images-mama, .gaticos-1025-display img, .gaticos-750 img{
+		.images-principal-mama, .gaticos-1025-images img, .gaticos-750-images img{
 			border: solid #F5FAC8 7px;
 			border-radius: 5px; 
 
 		}
-		.cats-750{
+		.titulo-1025, .titulo-750, .cats-750-animated, .gaticos-550-images{
 			display: none;
 		}
-		.gaticos-550{
-			display: none;
+		.cats-images-querie, .titulo-550{
+			opacity: 0;
+			display: none
 		}
+		.cats-1025-animated{
+			position: absolute;
+		}
+
+	
+ 	.lazy img{
+        -webkit-transition: opacity .9s ease-in-out;
+           -moz-transition: opacity .9s ease-in-out;
+             -o-transition:  opacity .9s ease-in-out;
+             transition: opacity .9s ease-in-out;
+               max-width: 100%;
+                   opacity: 0;
+        -webkit-transform: translateX(100px) ;
+		-moz-transform: translateX(100px) ;
+		-o-transform: translateX(100px) ;
+         	transform: translateX(100px) ;
+
+       
+    }
+
+    .lazy img.b-loaded {
+                   opacity: 1;
+                   transition: .9s;
+                transform: translateX(0px) ;
+    }
+.gaticos-750-images{
+		display: none;
+	}
+	.cat-brown, .cat-black{
+		opacity: 0;
+		transition: .2s;
+	}
+	
+	.leg-cat-brown, .body-cat-brown, .ball-cat-brown, .body-cat-black, .tail-cat-black{ 
+		position: absolute;
+	}
+
 
 /*------------------------footer-----------------------------------------*/
 		body footer{
@@ -222,19 +243,20 @@
 
 /*---------------------------------media queries .........................*/
 @media screen and (max-width: 1270px){
-	body{color:#F5FAC8;}
-	.alpha {
+	.menu-intro{
+		display: none;
+	}
+	.images-principal {
 		transform: translateX(-210px);
 		display:flex-none;
 		transition: .5s;
 	}
-	.menu{
-		display: none;
-	}
+	
 	.img1200{
 		opacity: 1;
 		transition: .9s;
 	}
+	body{color:#F5FAC8;}
 }
 
 @media screen and (max-width: 1125px)
@@ -249,8 +271,16 @@
 	}
 }
 
+
+
 @media screen and (max-width: 1025px)
-{
+{	.titulo-principal{
+	display: none;
+	
+	}
+	.images-animated-principal{
+	display: none;
+	}
 	body{
 		background: #F5C7F7;
 		grid-template-rows: auto auto auto;
@@ -272,38 +302,35 @@
 			100%{transform: translateX(0px); }	
 		}
 	
-	.titulo-principal{
-	display: none;
-	}
+	
 	.titulo-1025{
 			display: block;
+			transition: .9s;
 		}
 	
-	.images{
-		display: none;
-	}
-	.alpha, .img1200{
+	
+	.images-principal, .img1200{
 		opacity: 0;
 	}
-	.gaticos-1025{
+	.cats-images-querie{
 	display: block;
 	opacity: 1;
 	}
-	.gaticos-1025{
+	.cats-images-querie{
 		opacity: 1;
 		transition: .9s;
 		padding: 100px;
 	}
-	.gaticos-1025-display{
+	.gaticos-1025-images{
 		display: flex;
 		flex-flow: column wrap-reverse ;
 		align-items: center;
 		justify-content: center;
 	}
-	.gaticos-1025-display img, .gaticos-750 img{
+	.gaticos-1025-images img, .gaticos-750-images img{
 		margin-top: 25px;
 	}
-	.gaticos-1025-animated{
+	.cats-1025-animated{
 		position: absolute;
 	}
 	.head-red, .body-red{
@@ -342,6 +369,8 @@
 			100%{transform: translateY(0px) ;}
 		}
 
+
+
 	body footer{
 		background: #5E63B6;
 		transition-delay: .5s;
@@ -353,21 +382,7 @@
 	.cat-red, .cat-yellow, .gaticos-1025-display{
 		transition: .9s;
 	}
-/*------------------------------------future media 750--------------------------------*/
-	.gaticos-750{
-		display: none;
-	}
-	.cat-brown, .cat-black{
-		opacity: 0;
-		transition: .2s;
-	}
-	
-	.leg-cat-brown, .body-cat-brown, .ball-cat-brown, .body-cat-black, .tail-cat-black{ 
-		position: absolute;
-	}
 
-
-	
 	
 	
 
@@ -392,27 +407,47 @@
 		transform:translateY(335px) translateX(-300px) ;
 
 	}
-	.gaticos-1025-display{
+	.gaticos-1025-images{
 		transform: translateY(150px) ;
 	}
 	
 	
 }
 @media screen and (max-width: 750px)
-{ 	.cats-750{
+{ 	
+	.titulo-1025{
+	display: none
+}
+.titulo-750{
+		display: block;
+		
+
+	}
+	.gaticos-1025-images{
+		display: none;
+		transition: .9s;
+		transition-delay: .9s;
+	}
+	.gaticos-750-images{
+		display: block;
+		margin: 100px 0  -148px 0;
+		display: flex;
+		flex-flow: column wrap-reverse ;
+		align-items: center;
+		justify-content: center;		
+	}
+	.gaticos-750-images img{
+		width: 300px;
+		height: auto;
+	}
+	.cats-750-animated{
 	display: block;
 	width: 80%;
 	height: 100%;	
 	position: absolute;
 }
-	.titulo-1025{
-	display: none
-}
-	.titulo-750{
-		display: block;
-		
 
-	}
+	
 
 
 .top-cat{
@@ -467,9 +502,7 @@ animation: ball 1.8s ease-in infinite;
 	.tail-cat-black{
 		animation: tail 1.9s ease-in infinite;
 	}
-	.body-cat-black{
-
-	}
+	
 	@keyframes tail{
 		0%{
 			transform: rotate(10deg);		
@@ -482,7 +515,7 @@ animation: ball 1.8s ease-in infinite;
 		}
 	}
 
-	.bottom-cats{
+.bottom-cats{
 		margin: 958px auto 0;
 		width: 344px;	
 	}
@@ -522,23 +555,7 @@ animation: ball 1.8s ease-in infinite;
 	.cat-red, .cat-yellow{
 	display: none;
 	}
-	.gaticos-1025-display{
-		display: none;
-		transition: .9s;
-		transition-delay: .9s;
-	}
-	.gaticos-750{
-		display: block;
-		margin: 100px 0  -148px 0;
-		display: flex;
-		flex-flow: column wrap-reverse ;
-		align-items: center;
-		justify-content: center;		
-	}
-	.gaticos-750 img{
-		width: 300px;
-		height: auto;
-	}
+
 	.cat-red {
     transform: translateX(287px) translateY(300px);}
 	
@@ -552,15 +569,16 @@ animation: ball 1.8s ease-in infinite;
 
 @media screen and (max-width: 550px){
 		/*#E3D9CA blanco, #95A792 azul claro, #596C68 azul marino, #403F48 azul oscuro*/
+	body{
+		background: #E3D9CA;
+	}
 	header{
 		background: #596C68 ;
 	}
 	body footer{
 		background: #403F48;
 	}
-	body{
-		background: #E3D9CA;
-	}
+	
 	body footer, header{
 		border: 4px solid #95A792 ;
 	}
@@ -574,7 +592,7 @@ animation: ball 1.8s ease-in infinite;
 		font-size: 40px;
 		color: #E3D9CA; 
 	}
-	.gaticos-550{
+	.gaticos-550-images{
 		display: block;
 		margin: 100px 0  -156px 0;
 		display: flex;
@@ -583,13 +601,13 @@ animation: ball 1.8s ease-in infinite;
 		justify-content: center;
 		transition: .7s;		
 	}
-	.gaticos-550 img {
+	.gaticos-550-images img {
 		margin-top: 30px;
 		border: solid #95A792 7px;
 		border-radius: 5px; 
 
 	}
-	.gaticos-750{
+	.gaticos-750-images{
 		display: none;
 	}
 	.bottom-cats{
