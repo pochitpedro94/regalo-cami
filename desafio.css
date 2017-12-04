@@ -572,8 +572,11 @@ animation: ball 1.8s ease-in infinite;
 
 @media screen and (max-width: 550px){
 		/*#E3D9CA blanco, #95A792 azul claro, #596C68 azul marino, #403F48 azul oscuro*/
-	body section{
+
+	body, body section{
+
 		background: #E3D9CA;
+		
 	}
 	header{
 		background: #596C68 ;
@@ -619,7 +622,65 @@ animation: ball 1.8s ease-in infinite;
 }
 	
 
+@media screen and (max-width: 375px)
+{
+	body{
+		max-width:  375px;
+		margin: 0 auto;
 
+	}
+	.cats-images-querie{
+		padding: 117px 44px;
+	}
+	.bottom-cats{
+		
+		     margin: 924 0 0 -26px;
+    width: 80%;
+	}
+		@keyframes cat-azul{
+		0%{
+			transform: translateX(0);
+		}
+		50%{
+			transform: translateX(100px);
+		}
+		100%{
+			transform: translateX(0);
+		}
+	}
+	@keyframes cat-naranja{
+		0%{
+			transform: translateX(100px);
+		}
+		50%{
+			transform: translateX(0);
+		}
+		100%{
+			transform: translateX(100px);
+		}
+	}
+	.lazy img{
+        -webkit-transition: opacity .9s ease-in-out;
+           -moz-transition: opacity .9s ease-in-out;
+             -o-transition:  opacity .9s ease-in-out;
+             transition: opacity .9s ease-in-out;
+               max-width: 100%;
+                   opacity: 0;
+        	-webkit-transform: translateX(0px) ;
+			-moz-transform: translateX(0px) ;
+			-o-transform: translateX(0px) ;
+         	transform: translateX(0px) ;
+
+       
+    }
+
+    .lazy img.b-loaded {
+                   opacity: 1;
+                   transition: .9s;
+                transform: translateX(0px) ;
+    }
+
+}
 
 
 
