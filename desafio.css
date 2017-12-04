@@ -457,6 +457,7 @@
     display: flex;
     justify-content: center;
     height: 213px;
+    transition: .9s;
 }
     
 	.cat-brown{
@@ -520,7 +521,8 @@ animation: ball 1.8s ease-in infinite;
 
 .bottom-cats{
 		margin: 958px auto 0;
-		width: 344px;	
+		width: 344px;
+		transition: .9s
 	}
 	.cat-blue{
 		position: relative;
@@ -624,13 +626,13 @@ animation: ball 1.8s ease-in infinite;
 
 @media screen and (max-width: 375px)
 {
-	body{
+	{
 		max-width:  375px;
 		margin: 0 auto;
 
 	}
 	.cats-images-querie{
-		padding: 117px 44px;
+		padding: 0px 44px;
 	}
 	.bottom-cats{
 		
@@ -679,7 +681,14 @@ animation: ball 1.8s ease-in infinite;
                    transition: .9s;
                 transform: translateX(0px) ;
     }
-
+    .bottom-cats{
+    	display: none;
+    	transition: .9s;
+    }
+    .top-cat{
+    	display: none;
+    	transition: .9s;
+    }
 }
 
 
